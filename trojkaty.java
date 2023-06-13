@@ -9,11 +9,22 @@ class Trojkaty {
      * @param {float} b - Długość drugiego boku.
      * @param {float} c - Długość trzeciego boku.
      */
+
      public static boolean czyIstniejeTrojkat(float a, float b, float c){
        	 if (a + b <= c) return false;
 	 if (a + c <= b) return false;
 	 if (b + c <= a) return false;
 	 return true;
+     }
+
+    public static boolean czyProstokatny(float a, float b, float c){
+         if (a * a + b * b == c*c) return true;
+	 if (b * b + c * c == a*a) return true;
+	 if (a * a + c * c == b*b) return true;
+	 return false;
+
+	 }
+
 
     public static void jakiTrojkat(float a, float b, float c){
 	HEAD
@@ -27,6 +38,10 @@ class Trojkaty {
 	 if (a == b || b == c || a == c) {
 		System.out.println("Trójkąt równoramienny");
 			                     }
+         if (czyProstokatny(a, b, c)) {
+	        System.out.println("Trójkąt prostokątny");
+	             	                       }
+					     
          // TODO: tutaj trzeba bedzie dopisac inne przypadki
     }
     /** Wyświetla ekran pomocy */
